@@ -7,7 +7,7 @@
   background-image: linear-gradient(
     to right,
     #e84133,
-    /* Replace with your color */ #e84133 50%,
+    #e84133 50%,
     #fff 50%
   );
   background-size: 200% 100%;
@@ -23,7 +23,7 @@
   bottom: -3px;
   left: 0;
   position: absolute;
-  background: #e84133; /* Replace with your color */
+  background: #e84133; 
   transition: all 0.3s ease-in-out;
 }
 

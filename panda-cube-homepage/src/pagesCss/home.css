@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Background Container */
+.background-container {
+    @apply relative bg-no-repeat bg-cover bg-center min-h-screen; /* Tailwind utilities for background */
+    background-image: url('../assets/Web.svg'); /* Path to your SVG file */
+}
+
 .logo-container {
     @apply bg-white p-6 rounded-b-2xl rounded-t-none shadow-md; /* Rounded at the bottom only */
     @apply absolute top-0 left-14 w-full flex items-center justify-center; /* Flex for centering */
