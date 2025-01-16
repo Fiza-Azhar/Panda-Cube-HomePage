@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    background-image: url('../assets/Web.svg'); /* Mobile background */
+    background-image: url('../assets/WebView.svg'); /* Mobile background */
     background-size: cover;
     background-position: center;
 }
