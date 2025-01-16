@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #1d4ed8;
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --header-bg-color: #1a5631;
+  --header-text-color: white;
+  --heroSectionButtonsBackground: #ffffff;
+  --general-background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+  --hero-text-color: black;
+  --hero-section-items: #1a5631;
+  --bg-footer-background: #eaeaea;
+}
+
+.dark {
+  --primary-color: #3b82f6;
+  --background-color: #1f2937;
+  --text-color: #ffffff;
+  --header-bg-color: transparent;
+  --header-text-color: #ffffff;
+  --heroSectionButtonsBackground: #ffffff;
+  --general-background: linear-gradient(90deg, #1f2937, #111827);
+  --hero-text-color: white;
+  --hero-section-items: #112e1c;
+  --bg-footer-background: #1e0404;
+}
+
+/* Smooth transitions for theme changes */
+html {
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease;
+}
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  overflow-y: auto;
+}
