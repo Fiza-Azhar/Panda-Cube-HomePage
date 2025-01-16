@@ -6,7 +6,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'red-500': '#f87171',  // Tailwind red-500 color
+      },
+    },
     fontFamily: {
       merriweather: ['Merriweather', 'serif'],
       playfair: ['Playfair Display', 'serif'],

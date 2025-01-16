@@ -2,35 +2,151 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    background-image: url('../assets/Web.svg'); /* Mobile background */
+    background-size: cover;
+    background-position: center;
+}
+
+/* For larger screens (web view) */
+@media (min-width: 600px) {
+    body {
+        background-image: url('../assets/mobile.svg'); /* Web background */
+    }
+}
+
+.header {
+    @apply flex p-4 relative; /* Basic header styling */
+}
+
+.nav {
+    @apply flex text-sm mt-4; /* Default nav styling */
+}
+
+/* Position to the top-right corner for mobile (below 640px) */
+@media (max-width: 639px) {
+    .nav {
+        @apply text-xs absolute right-0 top-4; /* Position to the top-right corner */
+    }
+}
+
+/* Make the nav text smaller and position differently for medium screens (640px and up) */
+@media (min-width: 640px) {
+    .nav {
+        @apply text-sm mt-4 absolute right-0 top-0; /* Keep it at the top-right corner */
+    }
+}
+
+/* For larger screens (1024px and up), adjust positioning */
+@media (min-width: 1024px) {
+    .nav {
+        @apply flex text-sm mt-4 items-center gap-1; /* Center items and adjust spacing */
+        @apply absolute left-56; /* Move nav to the left on larger screens */
+    }
+}
+
+.nav a {
+    @apply hover:underline; /* Styling for navigation links */
+}
+
+.notification-badge {
+    @apply bg-red-500 text-xs px-1 rounded-full; /* Notification badge */
+}
+
+/* Logo container */
 .logo-container {
-    @apply bg-white p-6 rounded-b-2xl rounded-t-none shadow-md; /* Rounded at the bottom only */
-    @apply absolute top-0 left-14 w-full flex items-center justify-center; /* Flex for centering */
+    @apply bg-white p-6 rounded-b-2xl rounded-t-none shadow-md;
+    @apply absolute top-0 left-10 w-full flex items-center justify-center;
     @apply h-32 w-24; /* Default height and width for mobile */
-    @apply overflow-hidden; /* Prevent content from overflowing */
+    @apply overflow-hidden;
 }
 
+/* Logo image */
 .logo-image {
-    @apply max-h-full max-w-full object-contain; /* Prevent stretching and maintain aspect ratio */
+    @apply max-h-full max-w-full object-contain;
 }
 
-/* Responsive Adjustments */
-@media (min-width: 640px) { /* Small screens (sm) */
+/* Responsive adjustments for the logo */
+@media (min-width: 640px) {
     .logo-container {
-        @apply h-40 w-28; /* Larger container */
-    }
-    .logo-image {
-        @apply max-h-full max-w-full; /* Ensure it scales proportionally */
+        @apply h-40 w-28;
+        @apply absolute top-0 left-10;
     }
 }
 
-@media (min-width: 768px) { /* Medium screens (md) */
+@media (min-width: 768px) {
     .logo-container {
-        @apply h-48 w-32; /* Adjusted container size */
+        @apply h-48 w-32;
     }
 }
 
-@media (min-width: 1024px) { /* Large screens (lg) */
+@media (min-width: 1024px) {
     .logo-container {
-        @apply h-56 w-36; /* Adjusted container size for larger screens */
+        @apply absolute top-0 left-14;
+        @apply h-56 w-36;
     }
 }
+
+/*ICONS LEFT*/
+
+/* General icon container positioning */
+.icon-container {
+    position: absolute;
+}
+
+.icon-container svg {
+    width: 30px;
+    height: 30px;
+}
+@media (min-width: 1024px) {
+    .icon-container svg {
+        width: 30px !important;
+        height: 30px !important;
+    }
+}
+@media (min-width: 300px) {
+    .icon-container svg {
+        width: 20px ;
+        height: 20px ;
+    }
+}
+/* Specific positioning for each icon */
+.top-4 {
+    top: 1rem;
+}
+
+.top-14 {
+    top: 3.5rem;
+}
+
+.top-24 {
+    top: 6rem;
+}
+
+.left-3 {
+    left: 0.875rem;
+}
+
+/* Additional styles for the toggle button */
+.toggle-button {
+    cursor: pointer;
+}
+
+/* Toggle icons visibility */
+#light-icon {
+    display: block;
+}
+
+#dark-icon {
+    display: none;
+}
+
+/* Show the dark icon when dark mode is enabled */
+body.dark-mode #light-icon {
+    display: none;
+}
+
+body.dark-mode #dark-icon {
+    display: block;
+}
+
