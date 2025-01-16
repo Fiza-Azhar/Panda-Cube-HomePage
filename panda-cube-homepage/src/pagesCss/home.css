@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.logo-container {
+    @apply bg-white p-6 rounded-b-2xl rounded-t-none shadow-md; /* Rounded at the bottom only */
+    @apply absolute top-0 left-14 w-full flex items-center justify-center; /* Flex for centering */
+    @apply h-32 w-24; /* Default height and width for mobile */
+    @apply overflow-hidden; /* Prevent content from overflowing */
+}
+
+.logo-image {
+    @apply max-h-full max-w-full object-contain; /* Prevent stretching and maintain aspect ratio */
+}
+
+/* Responsive Adjustments */
+@media (min-width: 640px) { /* Small screens (sm) */
+    .logo-container {
+        @apply h-40 w-28; /* Larger container */
+    }
+    .logo-image {
+        @apply max-h-full max-w-full; /* Ensure it scales proportionally */
+    }
+}
+
+@media (min-width: 768px) { /* Medium screens (md) */
+    .logo-container {
+        @apply h-48 w-32; /* Adjusted container size */
+    }
+}
+
+@media (min-width: 1024px) { /* Large screens (lg) */
+    .logo-container {
+        @apply h-56 w-36; /* Adjusted container size for larger screens */
+    }
+}
