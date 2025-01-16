@@ -1,11 +1,11 @@
 import React from 'react';
-import facebook from '@assets/icons/facebook.png';
-import linkedin from '@assets/icons/linkedin.png';
-import instagram from '@assets/icons/instagram.png';
-import pinterest from '@assets/icons/pinterest.png';
-import twitter from '@assets/icons/twitter.png';
-import youtube from '@assets/icons/youtube.png';
-import tiktok from '@assets/icons/tiktok.png';
+import facebook from '../assets/icons/facebook.png';
+import linkedin from '../assets/icons/linkedin.png';
+import instagram from '../assets/icons/instagram.png';
+import pinterest from '../assets/icons/pinterest.png';
+import twitter from '../assets/icons/twitter.png';
+import youtube from '../assets/icons/youtube.png';
+import tiktok from '../assets/icons/tiktok.png';
 
 type SocialPlatformsType = {
   name: string;
