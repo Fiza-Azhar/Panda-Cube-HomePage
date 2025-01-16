@@ -15,6 +15,26 @@ body {
     }
 }
 
+
+/* General Main Styling (Desktop Default) */
+.main {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;    /* Center items horizontally */
+    text-align: center;     /* Center align text */
+    margin-top: 0; 
+    padding: 0 1.75rem;        /* Default padding for desktop screens */
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 300px) {
+    .main {
+      margin-top: 0 !important; /* Remove margin for mobile */
+      padding-top: 0 !important; /* Adjust padding for smaller screens */
+    }
+  }
+  
+
 .header {
     @apply flex p-4 relative; /* Basic header styling */
 }
@@ -150,3 +170,107 @@ body.dark-mode #dark-icon {
     display: block;
 }
 
+
+/* General Container */
+.container {
+    display: flex;
+    flex-direction: row; /* Default for desktop: side-by-side layout */
+    align-items: center;
+    padding: 0.5rem 2rem;
+    margin-top: 170px;
+  }
+  
+  /* Left Section */
+  .left-section {
+    text-align: left; /* Default alignment for desktop */
+  }
+  
+  .left-section h1 {
+    font-size: 4.5rem; /* Default for desktop screens */
+    margin-bottom: 0rem;
+  }
+  
+  .left-section p {
+    font-size: 2rem; /* Default for desktop screens */
+    color: #6d9b23;
+    margin-bottom: 2rem;
+  }
+  
+  /* Right Section */
+  .right-section {
+    display: flex;
+    justify-content: flex-end; /* Align to the right for desktop */
+    align-items: center;
+    transform: translateY(-10%);
+  }
+  
+  .right-section img {
+    width: 66%; /* Default for desktop screens */
+    height: auto;
+  }
+  
+  /* Tablet Styles */
+  @media (max-width: 1024px) {
+    .container {
+      flex-direction: column-reverse !important; /* Stack vertically for tablets */
+      align-items: center;
+      padding: 0rem;
+      margin-top: 30px !important;
+      margin-right: 0px !important;
+    }
+    .right-section {
+        margin-right: 0 !important;
+    }
+    .left-section {
+        order: -1; /* Move the left section to the top */
+        text-align: center; /* Center-align text for mobile */
+        margin-left: 0; /* Remove left margin */
+        margin-bottom: 1.5rem; /* Add spacing below the left section */
+      }
+    
+      .left-section h1 {
+        font-size: 3rem; /* Smaller font size for mobile */
+      }
+    
+      .left-section p {
+        font-size: 2rem; /* Adjust text size for mobile */
+      }
+  }
+  
+  /* Mobile Styles */
+@media (max-width: 300px) {
+    .container {
+      flex-direction: column-reverse; /* Stack elements vertically for mobile */
+      align-items: center;
+      margin: 0; /* Remove extra margins */
+      margin-top: 0px;
+      padding: 1rem;
+    }
+  
+    .left-section {
+      order: -1; /* Move the left section to the top */
+      text-align: center; /* Center-align text for mobile */
+      margin-left: 0; /* Remove left margin */
+      margin-bottom: 1.5rem; /* Add spacing below the left section */
+    }
+  
+    .left-section h1 {
+      font-size: 3rem; /* Smaller font size for mobile */
+    }
+  
+    .left-section p {
+      font-size: 1.25rem; /* Adjust text size for mobile */
+    }
+  
+    .right-section {
+        margin-top: 0 !important;
+      margin-bottom: 1.5rem; /* Add spacing below the logo for mobile */
+      transform: translateY(0); /* Remove translation on mobile */
+    }
+  
+    .right-section img {
+      width: 80%; /* Smaller image for mobile */
+    }
+  }
+  
+  
