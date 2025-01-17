@@ -1,107 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panda Cube - Home</title>
-    <link rel="stylesheet" href="../pagesCss/home.css">
+    <link rel="stylesheet" href="../pagesCss/home.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-  
-        .background-container {
-            @apply bg-no-repeat bg-cover bg-center min-h-screen; 
-            background-image: url('../assets/web.svg'); 
-        }
+      .background-container {
+        @apply bg-no-repeat bg-cover bg-center min-h-screen;
+        background-image: url("../assets/web.svg");
+      }
     </style>
-</head>
-<body class="bg-green-900 text-white font-sans">
+  </head>
+  <body class="bg-green-900 text-white font-sans">
     <header class="header">
-        <div class="icon-container top-4 left-3">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-globe-americas" viewBox="0 0 16 16">
-                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0M2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484q-.121.12-.242.234c-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z"/>
-            </svg>
+      <div class="icon-container top-4 left-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          class="bi bi-globe-americas"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0M2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484q-.121.12-.242.234c-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z"
+          />
+        </svg>
+      </div>
+
+      <div class="icon-container top-14 left-3">
+        <div
+          class="toggle-button"
+          onclick="toggleTheme()"
+          style="cursor: pointer"
+        >
+          <svg
+            id="light-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            class="bi bi-sun"
+            viewBox="0 0 16 16"
+            style="display: block"
+          >
+            <path
+              d="M8 4.5a3.5 3.5 0 1 0 3.5 3.5A3.5 3.5 0 0 0 8 4.5zM8 1a.5.5 0 0 1 .5.5V3h1a.5.5 0 0 1 .354.854l-1 1a.5.5 0 0 1-.708 0l-1-1A.5.5 0 0 1 7.5 3h1V1.5A.5.5 0 0 1 8 1zM8 13a.5.5 0 0 1-.5-.5V13H7a.5.5 0 0 1-.354-.854l1-1a.5.5 0 0 1 .708 0l1 1A.5.5 0 0 1 8.5 13h-1v1.5A.5.5 0 0 1 8 13zM1 8a.5.5 0 0 1 .5-.5h1V7a.5.5 0 0 1 .854-.354l1 1a.5.5 0 0 1 0 .708l-1 1A.5.5 0 0 1 2 8H1.5A.5.5 0 0 1 1 8zM13 8a.5.5 0 0 1 .5.5H14a.5.5 0 0 1-.354.854l-1 1a.5.5 0 0 1-.708 0l-1-1A.5.5 0 0 1 12.5 8h1V7a.5.5 0 0 1-.854-.354l-1-1a.5.5 0 0 1 0-.708l1-1A.5.5 0 0 1 13 7h1V8.5A.5.5 0 0 1 13 8z"
+            />
+          </svg>
+          <svg
+            id="dark-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            class="bi bi-moon"
+            viewBox="0 0 16 16"
+            style="display: none"
+          >
+            <path
+              d="M11.74 12.86A7 7 0 1 0 5.56 4.04a5.5 5.5 0 1 1 6.18 8.82zM8 14a6 6 0 1 1 6-6 6 6 0 0 1-6 6z"
+            />
+          </svg>
         </div>
-        
-        <div class="icon-container top-14 left-3">
-            <div class="toggle-button" onclick="toggleTheme()" style="cursor: pointer;">
-                <svg id="light-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16" style="display: block;">
-                    <path d="M8 4.5a3.5 3.5 0 1 0 3.5 3.5A3.5 3.5 0 0 0 8 4.5zM8 1a.5.5 0 0 1 .5.5V3h1a.5.5 0 0 1 .354.854l-1 1a.5.5 0 0 1-.708 0l-1-1A.5.5 0 0 1 7.5 3h1V1.5A.5.5 0 0 1 8 1zM8 13a.5.5 0 0 1-.5-.5V13H7a.5.5 0 0 1-.354-.854l1-1a.5.5 0 0 1 .708 0l1 1A.5.5 0 0 1 8.5 13h-1v1.5A.5.5 0 0 1 8 13zM1 8a.5.5 0 0 1 .5-.5h1V7a.5.5 0 0 1 .854-.354l1 1a.5.5 0 0 1 0 .708l-1 1A.5.5 0 0 1 2 8H1.5A.5.5 0 0 1 1 8zM13 8a.5.5 0 0 1 .5.5H14a.5.5 0 0 1-.354.854l-1 1a.5.5 0 0 1-.708 0l-1-1A.5.5 0 0 1 12.5 8h1V7a.5.5 0 0 1-.854-.354l-1-1a.5.5 0 0 1 0-.708l1-1A.5.5 0 0 1 13 7h1V8.5A.5.5 0 0 1 13 8z"/>
-                </svg>
-                <svg id="dark-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-moon" viewBox="0 0 16 16" style="display: none;">
-                    <path d="M11.74 12.86A7 7 0 1 0 5.56 4.04a5.5 5.5 0 1 1 6.18 8.82zM8 14a6 6 0 1 1 6-6 6 6 0 0 1-6 6z"/>
-                </svg>
-            </div>
-        </div>
-        
-        <div class="icon-container top-24 left-3">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-headphones" viewBox="0 0 16 16">
-                <path d="M8 3a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a6 6 0 1 1 12 0v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1V8a5 5 0 0 0-5-5"/>
-            </svg>
-        </div>
-        
-        <div class="logo-container">
-            <img src="../assets/VerticalLogo.png" alt="Panda Logo" class="logo-image">
-        </div>
-        <nav class="nav">
-            <a href="#">HOME</a>
-            <a>|</a>
-            <a href="#">ABOUT US</a>
-            <a>|</a>
-            <a href="#">FAQs</a>
-            <a>|</a>
-            <a href="#">UPDATES <span class="notification-badge">3</span></a>
-        </nav>
+      </div>
+
+      <div class="icon-container top-24 left-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          class="bi bi-headphones"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 3a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a6 6 0 1 1 12 0v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1V8a5 5 0 0 0-5-5"
+          />
+        </svg>
+      </div>
+
+      <div class="logo-container">
+        <img
+          src="../assets/VerticalLogo.png"
+          alt="Panda Logo"
+          class="logo-image"
+        />
+      </div>
+      <nav class="nav">
+        <a href="#">HOME</a>
+        <a>|</a>
+        <a href="#">ABOUT US</a>
+        <a>|</a>
+        <a href="#">FAQs</a>
+        <a>|</a>
+        <a href="#">UPDATES <span class="notification-badge">3</span></a>
+      </nav>
     </header>
-    
 
     <main class="main">
-        <div class="container">
-            <!-- Left Section -->
-            <div class="left-section">
-              <h1>Welcome to Panda Cube</h1>
-              <p>Better Together</p>
-            </div>
+      <div class="container">
+        <!-- Left Section -->
+        <div class="left-section">
+          <h1>Welcome to Panda Cube</h1>
+          <p>Better Together</p>
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section">
+          <img src="../assets/whiteLogo.png" alt="Panda Cube Logo" />
+        </div>
+      </div>
+      <div class="pattern-container">
+        <!-- Left Pattern -->
+        <div class="bg-pattern"></div>
+      
+        <!-- Buttons -->
+        <div class="button-container">
+            <a href="#" class="custom-button">
+              <span class="btn-title">Sign In</span>
+              <span class="btn-subtitle">Already Panda Partner</span>
+            </a>
+            <a href="#" class="custom-button">
+              <span class="btn-title">Register</span>
+              <span class="btn-subtitle">Introduce yourself</span>
+            </a>
+            <a href="#" class="custom-button">
+              <span class="btn-title">Guides</span>
+              <span class="btn-subtitle">Cube Tour</span>
+            </a>
+          </div>
           
-            <!-- Right Section -->
-            <div class="right-section">
-              <img src="../assets/whiteLogo.png" alt="Panda Cube Logo">
-            </div>
-        </div>
-          
-        
-        
-        <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
-            <a href="#" class="flex flex-col items-center justify-center px-4 py-2 border border-white rounded-xl w-full" style="background-color: rgba(184, 176, 176, 0.6); color: white; font-family: 'Helvetica', sans-serif; transition: 0.3s;">
-                <span class="buttons">Sign In</span>
-                <span class="text-sm">Already Panda Partner</span>
-            </a>
-            <a href="#" class="flex flex-col items-center justify-center px-4 py-2 border border-white rounded-xl w-full" style="background-color: rgba(184, 176, 176, 0.6); color: white; font-family: 'Helvetica', sans-serif; transition: 0.3s;">
-                <span class="block font-bold text-lg mb-1">Register</span>
-                <span class="text-sm">Introduce yourself</span>
-            </a>
-            <a href="#" class="flex flex-col items-center justify-center px-4 py-2 border border-white rounded-xl w-full" style="background-color: rgba(184, 176, 176, 0.6); color: white; font-family: 'Helvetica', sans-serif; transition: 0.3s;">
-                <span class="block font-bold text-lg mb-1">Guides</span>
-                <span class="text-sm">Cube Tour</span>
-            </a>
-        </div>
-        <div class="mt-8 flex justify-center space-x-2">
-            <div class="h-4 w-4 bg-green-300 rounded-full"></div>
-            <div class="h-4 w-4 bg-green-500 rounded-full"></div>
-            <div class="h-4 w-4 bg-green-300 rounded-full"></div>
-            <div class="h-4 w-4 bg-green-500 rounded-full"></div>
-            <div class="h-4 w-4 bg-green-300 rounded-full"></div>
-        </div>
+      
+        <!-- Right Pattern -->
+        <div class="bg-pattern"></div>
+        <div class="right-pattern-mobile"></div>
+      </div>      
     </main>
 
-    <footer class="text-center mt-12 space-y-4">
-        <a href="mailto:care@panda.com.sa" class="hover:underline">care@panda.com.sa</a>
-        <div class="flex justify-center space-x-4">
-            <a href="#"><img src="icon1.png" alt="Social Icon" class="h-6"></a>
-            <a href="#"><img src="icon2.png" alt="Social Icon" class="h-6"></a>
-            <a href="#"><img src="icon3.png" alt="Social Icon" class="h-6"></a>
-            <a href="#"><img src="icon4.png" alt="Social Icon" class="h-6"></a>
-        </div>
-        <p class="text-sm">&copy; 2024 Panda Retail Company. All rights reserved.</p>
-    </footer>
-</body>
+    <footer class="footer">
+        <p class="footer-text">
+          &copy; 2024 Panda Retail Company. All rights reserved.
+        </p>
+        <a href="mailto:care@panda.com.sa" class="footer-email">
+          care@panda.com.sa
+        </a>
+      </footer>
+      
+      
+      
+  </body>
 </html>

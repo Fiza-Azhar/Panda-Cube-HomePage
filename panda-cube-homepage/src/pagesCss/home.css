@@ -3,15 +3,17 @@
 @tailwind utilities;
 
 body {
-    background-image: url('../assets/WebView.svg'); 
-    background-size: cover;
-    background-position: center;
+  background-image: url('../assets/MobileBG.svg');
+  background-size: cover; /* Ensures the image fits within the body */
+  background-position: center; /* Keeps the image centered */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100vh; /* Ensures the body takes up the full height of the viewport */
+  margin: 0; /* Removes any default margin */
 }
-
 /* For larger screens (web view) */
 @media (min-width: 600px) {
     body {
-        background-image: url('../assets/mobile.svg'); 
+        background-image: url('../assets/BG.svg'); 
     }
 }
 
@@ -298,4 +300,124 @@ body.dark-mode #dark-icon {
     }
   }
   
+/* Custom Button Styling */
+.custom-button {
+  @apply px-4 py-2 w-44 h-16 border border-white rounded-xl text-center bg-gray-500 bg-opacity-60 text-white transition-transform transform hover:scale-105 hover:bg-opacity-80;
+  display: flex; /* Stack elements in a column */
+  flex-direction: column; /* Explicitly ensure stacking */
+  align-items: center; /* Center both lines horizontally */
+}
+
+.btn-title {
+  font-size: 1.125rem; /* Equivalent to text-lg */
+  font-weight: bold;
+}
+
+/* Subtitle text size for buttons */
+.btn-subtitle {
+  font-size: 0.875rem; /* Equivalent to text-sm */
+  opacity: 0.9;
+}
+
+@layer utilities {
+  .bg-pattern {
+    @apply w-[30rem] h-24 bg-no-repeat bg-center; /* Increase width and height */
+    background-size: 200%; /* Increase image size (adjust percentage as needed) */
+    background-image: url('../assets/WhiteLeaves.svg'); /* Adjust the path as needed */
+  }
   
+
+  .pattern-container {
+    @apply relative flex justify-center items-center gap-0;
+  }
+
+  .button-container {
+    @apply flex flex-col md:flex-row justify-center items-center gap-4 z-10;
+  }
+}
+
+@media (max-width: 300px) {
+.right-pattern-mobile {
+  display: block !important; /* Ensure the mobile pattern is visible */
+  background-image: url('../assets/dou.svg'); /* Adjust the path as needed */
+  background-size: cover; /* Ensure the pattern covers the entire container */
+  background-position: center; /* Center the pattern within the container */
+  width: 100%; /* Full width of the container */
+  height: 100px; /* Increase the height for better visibility */
+  margin-top: 1rem; /* Add margin to separate it from buttons */
+}
+}
+@media (max-width: 640px) {
+  .main{
+    height: 90%;
+  }
+  .pattern-container {
+    padding: 3rem; /* Adjust container padding for mobile */
+  }
+
+  .button-container {
+    flex-direction: row; /* Arrange buttons horizontally */
+    gap: 0.25rem;
+    justify-content: center; /* Center buttons */
+    margin-bottom: 2rem; /* Reduced space for the bottom pattern */
+    margin-left: 7rem;
+    margin-right: 7rem;
+  }
+
+  .custom-button {
+    width: 7rem; /* Make buttons smaller */
+    height: 3rem;
+    padding: 0.25rem 0.75rem;
+  }
+
+  .bg-pattern{
+    display: none;
+  }
+
+  .btn-title {
+    font-size: 0.80rem; /* Equivalent to text-lg */
+    font-weight: bold;
+  }
+  
+  /* Subtitle text size for buttons */
+  .btn-subtitle {
+    font-size: 0.55rem; /* Equivalent to text-sm */
+    opacity: 0.9;
+  }
+
+  .footer{
+    margin-bottom: 0px !important;
+  }
+
+  .footer-email {
+    left: 55%; /* Position the element at 50% from the left */
+    transform: translateX(-50%); /* Offset the element by half of its own width to center it */
+    margin-bottom: 40px; /* Adjust the bottom margin as needed */
+}
+}
+
+.footer {
+  position: relative;
+  margin-top: 0;
+  padding: 0;
+}
+
+.footer-text {
+  font-size: 0.875rem; /* Equivalent to text-sm */
+  text-align: center;
+  color: rgb(139, 138, 138);
+}
+
+.footer-email {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: rgb(139, 138, 138);
+  font-size: 0.75rem; /* Equivalent to text-xs */
+  padding: 0.5rem; /* Adjust as needed */
+  text-decoration: none;
+}
+
+.footer-email:hover {
+  text-decoration: underline;
+}
