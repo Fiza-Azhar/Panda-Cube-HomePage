@@ -2,20 +2,18 @@
 import React, { useState } from "react";
 import logoImage from "../../assets/VerticalLogo.png";
 import pandaImage from "../../assets/whiteLogo.png";
-import "../../pagesCss/home.css"; // Assuming your custom styles are in menu2.css, as per your previous setup
+import "../../pagesCss/home.css"; 
+import LanguageDropdown from "../Header/LanguageDropdown";
 
 interface SignInModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onOpenRegister: () => void;
 }
-
 const SignInModal: React.FC<SignInModalProps> = ({
   isOpen,
   onClose,
-  onOpenRegister,
 }) => {
-  if (!isOpen) return null; // Prevent rendering when modal is closed
+  if (!isOpen) return null; 
 
   return (
     <div
@@ -33,7 +31,7 @@ const SignInModal: React.FC<SignInModalProps> = ({
               className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
             >
               <svg
-                className="w-3 h-3"
+                className="w-4 h-4"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -44,7 +42,7 @@ const SignInModal: React.FC<SignInModalProps> = ({
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                  d="M1 1l6 6m0 0l6 6M7 7l6-6M7 7l-6 6"
                 />
               </svg>
             </button>
@@ -62,7 +60,7 @@ const SignInModal: React.FC<SignInModalProps> = ({
                   type="email"
                   name="email"
                   id="email"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+                  className="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg block w-full p-2.5"
                   placeholder="name@company.com"
                   required
                 />
@@ -72,18 +70,17 @@ const SignInModal: React.FC<SignInModalProps> = ({
                   htmlFor="password"
                   className="block mb-2 text-sm font-medium text-[#006400] dark:text-black"
                 >
-                  Your password
+                  Password
                 </label>
                 <input
                   type="password"
                   name="password"
                   id="password"
                   placeholder="••••••••"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+                  className="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg block w-full p-2.5"
                   required
                 />
               </div>
-
               <div className="flex justify-between mt-4">
                 <div className="flex items-start">
                   <input
@@ -93,30 +90,31 @@ const SignInModal: React.FC<SignInModalProps> = ({
                   />
                   <label
                     htmlFor="remember"
-                    className="ms-2 text-sm font-medium text-gray-900"
+                    className="ms-2 text-sm font-medium  text-black"
                   >
                     Remember me
                   </label>
                 </div>
-                <a href="#" className="text-sm text-green-700 hover:underline">
+                <a href="#" className="text-sm text-[#006400] hover:underline">
                   Lost Password?
                 </a>
               </div>
               <button
-                type="submit"
-                className="w-full text-black bg-green-700 hover:bg-green-800 rounded-lg text-sm px-5 py-2.5"
-              >
-                Login to your account
-              </button>
+  type="submit"
+  className="w-full text-white bg-[#006400] hover:bg-[#004d00] rounded-lg text-sm px-5 py-2.5"
+>
+  Login to your account
+</button>
+
+
               <div className="text-sm font-medium text-gray-500 mt-4">
                 Not registered?{" "}
                 <a
                   href="#"
                   onClick={() => {
                     onClose();
-                    onOpenRegister();
                   }}
-                  className="text-green-700 hover:underline"
+                  className="text-sm text-[#006400] hover:underline"
                 >
                   Create account
                 </a>
@@ -128,92 +126,6 @@ const SignInModal: React.FC<SignInModalProps> = ({
     </div>
   );
 };
-
-interface RegisterProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onOpenSignIn: () => void;
-}
-
-const Register: React.FC<RegisterProps> = ({
-  isOpen,
-  onClose,
-  onOpenSignIn,
-}) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    console.log("Register form submitted", name, email);
-    // Handle registration logic here (e.g., API call)
-    onClose(); // Close modal after submission
-  };
-
-  if (!isOpen) return null;
-
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-50">
-      <div className="bg-white p-6 rounded-lg shadow-xl w-full max-w-md">
-        <h2 className="text-xl font-semibold text-center">Register</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-              className="w-full mt-1 p-2 border border-gray-300 rounded-md text-black"
-            />
-          </div>
-
-          <div className="mb-4">
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="w-full mt-1 p-2 border border-gray-300 rounded-md text-black"
-            />
-          </div>
-
-          <div className="flex justify-center space-x-4 mt-4">
-            <button
-              type="submit"
-              className="px-4 py-2 bg-green-700 text-white rounded-md hover:bg-green-500"
-            >
-              Register
-            </button>
-            <button
-              type="button"
-              onClick={onClose}
-              className="px-4 py-2 text-gray-600 border border-gray-300 rounded-md hover:bg-gray-200"
-            >
-              Close
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  );
-};
-
 interface FeedbackFormProps {
   isOpen: boolean;
   onClose: () => void;
@@ -234,45 +146,118 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ isOpen, onClose }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-50">
       <div className="bg-white p-6 rounded-lg shadow-xl w-full max-w-md">
-        <h2 className="text-xl font-semibold text-center">Feedback</h2>
+        <h2 className="text-xl font-semibold text-center text-[#006400]">Feedback</h2>
         <form onSubmit={handleSubmit}>
-          <div className="mb-4">
+          {/* Name Field */}
+          <div  className="mb-4 text-left">
             <label
-              htmlFor="feedback"
-              className="block text-sm font-medium text-gray-700"
+              htmlFor="name"
+              className="block text-sm font-medium text-[#006400]"
             >
-              Your Feedback
+              Name
             </label>
-            <textarea
-              id="feedback"
-              name="feedback"
-              value={feedback}
-              onChange={(e) => setFeedback(e.target.value)}
-              required
-              rows={4}
+            <input
+              type="text"
+              id="name"
+              name="name"
               className="w-full mt-1 p-2 border border-gray-300 rounded-md text-black"
+              required
             />
           </div>
+  
+          {/* Email Field */}
+          <div  className="mb-4 text-left">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-[#006400]"
+            >
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              className="w-full mt-1 p-2 border border-gray-300 rounded-md text-black"
+              required
+            />
+          </div>
+  
+          {/* Feedback Type */}
+          <div className="mb-4">
+  <p className="text-sm font-medium text-[#006400] text-left">Feedback Type</p>
+  <div className="flex justify-start space-x-6 mt-2">
+    <label className="flex items-center text-sm text-black">
+      <input
+        type="radio"
+        name="feedbackType"
+        value="comments"
+        required
+        className="mr-2 text-green-600"
+      />
+      Comments
+    </label>
+    <label className="flex items-center text-sm text-black">
+      <input
+        type="radio"
+        name="feedbackType"
+        value="questions"
+        required
+        className="mr-2 text-green-600"
+      />
+      Questions
+    </label>
+    <label className="flex items-center text-sm text-black">
+      <input
+        type="radio"
+        name="feedbackType"
+        value="suggestions"
+        required
+        className="mr-2 text-green-600"
+      />
+      Suggestions
+    </label>
+  </div>
+</div>
 
+  
+          {/* Description Field */}
+          <div  className="mb-4 text-left">
+            <label
+              htmlFor="description"
+              className="block text-sm font-medium text-[#006400]"
+            >
+              Description
+            </label>
+            <textarea
+              id="description"
+              name="description"
+              rows={4}
+              className="w-full mt-1 p-2 border border-gray-300 rounded-md text-black"
+              required
+            ></textarea>
+          </div>
+  
+          {/* Buttons */}
           <div className="flex justify-center space-x-4 mt-4">
             <button
               type="submit"
-              className="px-4 py-2 bg-blue-700 text-white rounded-md hover:bg-blue-500"
+              className="px-4 py-2 bg-[#006400] text-white rounded-md hover:bg-[#004d00]"
             >
               Submit
             </button>
             <button
-              type="button"
-              onClick={onClose}
-              className="px-4 py-2 text-gray-600 border border-gray-300 rounded-md hover:bg-gray-200"
-            >
-              Close
-            </button>
+  type="button"
+  onClick={onClose}
+  className="px-4 py-2 text-white bg-[#006400] border border-[#006400] rounded-md hover:bg-[#004d00] hover:border-[#004d00]"
+>
+  Close
+</button>
+
           </div>
         </form>
       </div>
     </div>
-  );
+  );  
 };
 
 const Home: React.FC = () => {
@@ -310,14 +295,8 @@ const Home: React.FC = () => {
               className="icon-container top-4 left-3"
               style={{ cursor: "pointer" }}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                className="bi bi-globe-americas"
-                viewBox="0 0 16 16"
-              >
-                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0M2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484q-.121.12-.242.234c-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z" />
-              </svg>
+              <LanguageDropdown/>
+
             </div>
 
             <div className="icon-container top-14 left-3">
@@ -432,7 +411,6 @@ const Home: React.FC = () => {
                   <SignInModal
                     isOpen={signInOpen}
                     onClose={() => setSignInOpen(false)}
-                    onOpenRegister={() => setRegisterOpen(true)}
                   />
                   <button
                     onClick={() => setRegisterOpen(true)}
@@ -441,11 +419,7 @@ const Home: React.FC = () => {
                     <span className="btn-title">Register</span>
                     <span className="btn-subtitle">Introduce yourself</span>
                   </button>
-                  <Register
-                    isOpen={registerOpen}
-                    onClose={() => setRegisterOpen(false)}
-                    onOpenSignIn={() => setSignInOpen(true)}
-                  />
+
                   <a href="#" className="custom-button">
                     <span className="btn-title">Guides</span>
                     <span className="btn-subtitle">Cube Tour</span>

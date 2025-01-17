@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './components/Home/home'; // Adjust if needed
+import Home from './components/Home/home';
 
 const App: React.FC = () => {
   console.log('App component is rendering');
@@ -7,6 +7,7 @@ const App: React.FC = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+
       </Routes>
     </Router>
   );
