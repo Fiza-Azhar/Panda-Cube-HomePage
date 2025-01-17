@@ -297,33 +297,17 @@ const Home: React.FC = () => {
         </div>
 
         <div className="icon-container top-14 left-3">
-          <div
-            className="toggle-button"
-            onClick={() => setToggleOpen(true)}
-            style={{ cursor: "pointer" }}
-          >
-            <svg
-              id="light-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              className="bi bi-sun"
-              viewBox="0 0 16 16"
-              style={{ display: "block" }}
-            >
-              <path d="M8 4.5a3.5 3.5 0 1 0 3.5 3.5A3.5 3.5 0 0 0 8 4.5zM8 1a.5.5 0 0 1 .5.5V3h1a.5.5 0 0 1 .354.854l-1 1a.5.5 0 0 1-.708 0l-1-1A.5.5 0 0 1 7.5 3h1V1.5A.5.5 0 0 1 8 1zM8 13a.5.5 0 0 1-.5-.5V13H7a.5.5 0 0 1-.354-.854l1-1a.5.5 0 0 1 .708 0l1 1A.5.5 0 0 1 8.5 13h-1v1.5A.5.5 0 0 1 8 13zM1 8a.5.5 0 0 1 .5-.5h1V7a.5.5 0 0 1 .854-.354l1 1a.5.5 0 0 1 0 .708l-1 1A.5.5 0 0 1 2 8H1.5A.5.5 0 0 1 1 8zM13 8a.5.5 0 0 1 .5.5H14a.5.5 0 0 1-.354.854l-1 1a.5.5 0 0 1-.708 0l-1-1A.5.5 0 0 1 12.5 8h1V7a.5.5 0 0 1-.854-.354l-1-1a.5.5 0 0 1 0-.708l1-1A.5.5 0 0 1 13 7h1V8.5A.5.5 0 0 1 13 8z" />
-            </svg>
-            <svg
-              id="dark-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              className="bi bi-moon"
-              viewBox="0 0 16 16"
-              style={{ display: "none" }}
-            >
-              <path d="M11.74 12.86A7 7 0 1 0 5.56 4.04a5.5 5.5 0 1 1 6.18 8.82zM8 14a6 6 0 1 1 6-6 6 6 0 0 1-6 6z" />
-            </svg>
-          </div>
-        </div>
+  <label className="inline-flex items-center mb-5 cursor-pointer">
+    <input
+      type="checkbox"
+      value=""
+      className="sr-only peer"
+      onChange={() => setToggleOpen((prev) => !prev)}
+    />
+    <div className="relative w-9 h-5 bg-gray-200 border-2 border-gray-400 dark:bg-gray-700 dark:border-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:peer-checked:bg-yellow-500 peer-checked:bg-blue-600 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+  </label>
+</div>
+
 
         <div x-data="{ modalOpen: false }">
           <div
