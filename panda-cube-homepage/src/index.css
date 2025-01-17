@@ -40,3 +40,17 @@ html {
   height: 100%;
   overflow-y: auto;
 }
+
+  html, body, #root {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  #root {
+    flex-grow: 1;
+  }

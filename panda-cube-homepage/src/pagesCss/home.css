@@ -352,6 +352,25 @@ body.dark-mode #dark-icon {
   margin-top: 1rem; /* Add margin to separate it from buttons */
 }
 }
+
+.footer-socials {
+  display: none !important;
+}
+@media (max-width: 640px) {
+
+  .footer-socials{
+    position: absolute;
+    right: 25%;
+    bottom: 100%;
+      flex: 1;
+      color: rgb(139, 138, 138);
+      display: flex !important;
+    padding: 0.5rem; /* Adjust as needed */
+
+      justify-content: flex-end;
+      gap: 5px;
+  }
+}
 @media (max-width: 640px) {
   .main{
     height: 90%;
@@ -408,7 +427,7 @@ body.dark-mode #dark-icon {
 }
 
 .footer-text {
-  font-size: 0.875rem; /* Equivalent to text-sm */
+  font-size: 0.70rem; /* Equivalent to text-sm */
   text-align: center;
   color: rgb(139, 138, 138);
 }
@@ -417,10 +436,12 @@ body.dark-mode #dark-icon {
   right: 0;
   bottom: 0;
   color: rgb(139, 138, 138);
-  font-size: 0.875rem; /* Equivalent to text-xs */
+  font-size: 0.70rem; /* Equivalent to text-xs */
   padding: 0.5rem; /* Adjust as needed */
   text-decoration: none;
 }
+
+
 
 .footer-email:hover {
   text-decoration: underline;
@@ -521,6 +542,28 @@ body.dark-mode #dark-icon {
   
     .modal-footer .btn {
       @apply text-sm; /* Adjust button text size */
+    }
+  }
+  .social-icons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .social-icons a {
+    color: #333;
+    font-size: 1.5em;
+    text-decoration: none;
+  }
+  
+  .social-icons a:hover {
+    color: #007bff;
+  }
+
+  @media (max-width: 600px) {
+    .social-icons{
+      display: none;
     }
   }
   
