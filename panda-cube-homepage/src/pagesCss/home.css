@@ -255,7 +255,7 @@ body.dark-mode #dark-icon {
     }
     .left-section {
         order: -1; /* Move the left section to the top */
-        text-align: center; /* Center-align text for mobile */
+        text-align: left; /* Center-align text for mobile */
         margin-left: 0; /* Remove left margin */
         margin-bottom: 1.5rem; /* Add spacing below the left section */
       }
