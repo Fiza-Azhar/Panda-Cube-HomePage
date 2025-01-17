@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobe, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { LANGUAGE_DROPDOWN_ITEMS } from '../../constants/index';
 
@@ -34,23 +34,24 @@ function LanguageDropdown() {
 
       {/* Dropdown Items - Show when isOpen is true */}
       {isOpen && (
-        <div className="absolute right-0 z-50 mt-2 w-40 rounded-md bg-gray-200 opacity-50 shadow-lg transition-opacity duration-300 ease-in-out">
-          <ul className="py-1">
-            {LANGUAGE_DROPDOWN_ITEMS.filter(
-              (item) => item.key !== selectedLanguage,
-            ).map((item) => (
-              <li key={item.key}>
-                <button
-                  onClick={() => handleSelect(item.key)}
-                  className="font-merriweather block w-full px-4 py-2 text-lg text-white bg-green-500 hover:bg-green-600 focus:outline-none"
-                >
-                  {item.name}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+  <div className="absolute right-0 z-50 mt-2 w-32 rounded-md shadow-lg transition-opacity duration-300 ease-in-out" style={{ backgroundColor: 'rgba(0, 100, 0, 0.5)' }}>
+    <ul className="py-1">
+      {LANGUAGE_DROPDOWN_ITEMS.filter(
+        (item) => item.key !== selectedLanguage,
+      ).map((item) => (
+        <li key={item.key}>
+          <button
+            onClick={() => handleSelect(item.key)}
+            className="font-merriweather block w-full px-4 py-1.5 text-sm text-white bg-green-700 hover:bg-green-600 focus:outline-none"
+          >
+            {item.name}
+          </button>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
+
     </div>
   );
 }
