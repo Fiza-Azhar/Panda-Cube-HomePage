@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    background-image: url('../assets/WebView.svg'); /* Mobile background */
+    background-image: url('../assets/WebView.svg'); 
     background-size: cover;
     background-position: center;
 }
@@ -11,11 +11,22 @@ body {
 /* For larger screens (web view) */
 @media (min-width: 600px) {
     body {
-        background-image: url('../assets/mobile.svg'); /* Web background */
+        background-image: url('../assets/mobile.svg'); 
     }
 }
 
-
+@font-face {
+    font-family: 'PandaBetaBold' ;
+    src: url('../assets/fonts/Panda_beta_3-Bold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'PandaBetaLight' ;
+    src: url('../assets/fonts/Panda_beta_3-Light.otf') format('opentype');
+}
+@font-face {
+    font-family: 'PandaBetaRegular' ;
+    src: url('../assets/fonts/Panda_beta_3-Regular.otf') format('opentype');
+}
 /* General Main Styling (Desktop Default) */
 .main {
     display: flex;
@@ -23,9 +34,22 @@ body {
     align-items: center;    /* Center items horizontally */
     text-align: center;     /* Center align text */
     margin-top: 0; 
-    padding: 0 1.75rem;        /* Default padding for desktop screens */
+    padding: 0 1.75rem;    
+    overflow-x: hidden;
+    overflow-y: auto; 
   }
-  
+  h1{
+    font-family: 'PandaBetaBold', sans-serif;
+    font-size: large ;
+  }
+  p{
+    font-family: 'PandaBetaLight', sans-serif;
+    font-weight: bold;
+  }
+  .buttons {
+    font-family: 'PandaBetaRegular', sans-serif;
+    font-weight: bold;
+  }
   /* Mobile Styles */
   @media (max-width: 300px) {
     .main {
@@ -182,6 +206,7 @@ body.dark-mode #dark-icon {
   
   /* Left Section */
   .left-section {
+   
     text-align: left; /* Default alignment for desktop */
   }
   
