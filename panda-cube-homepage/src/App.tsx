@@ -1,20 +1,14 @@
-import React from 'react';
-import Navbar from './components/navbar';
-import LanguageDropdown from './components/Header/LanguageDropdown';
-import SocialMedia from './components/socialMedia'; // Import the SocialMedia component
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './components/Home/home'; // Adjust if needed
 
-const App = () => {
+const App: React.FC = () => {
+  console.log('App component is rendering');
   return (
-    <div>
-      <Navbar />
-      <div className="min-h-screen" style={{ backgroundColor: 'var(--hero-section-items)' }}>
-        <LanguageDropdown />
-      </div>
-      {/* Add SocialMedia links below */}
-      <div className="social-media-section">
-        <SocialMedia />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Router>
   );
 };
 

@@ -3,6 +3,8 @@ export default {
   content: [
     "./index.html",
     "./src/pages/home.html",
+    "./App.tsx",
+    "./src/components/Home/home.tsx",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
