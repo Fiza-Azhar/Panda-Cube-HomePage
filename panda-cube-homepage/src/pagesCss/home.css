@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-image: url('../assets/MobileBG.svg');
+  background-image: url('../assets/mL.svg');
   background-size: cover; /* Ensures the image fits within the body */
   background-position: center; /* Keeps the image centered */
   background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -341,10 +341,10 @@ body.dark-mode #dark-icon {
   }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 1024px) {
 .right-pattern-mobile {
   display: block !important; /* Ensure the mobile pattern is visible */
-  background-image: url('../assets/dou.svg'); /* Adjust the path as needed */
+  background-image: url('../assets/dou.svg') !important; /* Adjust the path as needed */
   background-size: cover; /* Ensure the pattern covers the entire container */
   background-position: center; /* Center the pattern within the container */
   width: 100%; /* Full width of the container */
@@ -376,7 +376,7 @@ body.dark-mode #dark-icon {
     height: 90%;
   }
   .pattern-container {
-    padding: 3rem; /* Adjust container padding for mobile */
+    padding: 7vw 7vh; /* Adjust container padding for mobile */
   }
 
   .button-container {
